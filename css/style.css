@@ -1,0 +1,277 @@
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-Italic.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-Bold.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-Light.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-ExtraLightItalic.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-HeavyItalic.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-Medium.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-ExtraLight.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-BoldItalic.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-ExtraBold.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-LightItalic.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bliss Pro';
+    src: url('../fonts/subset-BlissPro-MediumItalic.woff2') format('woff2'),
+        url('../fonts/subset-BlissPro-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+html * {
+    box-sizing: inherit;
+}
+
+.container {
+    max-width: 1637px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    background-image: url(../images/header-bg.jpg);
+    background-size: cover;
+    height: 190px;
+    padding-top: 30px;
+}
+
+.header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper {
+    position: relative;
+    height: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 1px -2px #ADD4E0, 0 -2px 1px -2px #ADD4E0
+}
+
+.logo-wrapper:before {
+    content: '';
+    display: block;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    width: 10000px;
+    left: -10000px;
+    background-color: #fff;
+    box-shadow: 0 2px 1px -2px #ADD4E0, 0 -2px 1px -2px #ADD4E0
+}
+
+.logo-wrapper:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid #fff;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-right: 15px solid transparent;
+    top: 0;
+    right: -30px;
+    filter: drop-shadow(1px 0px #ADD4E0);
+}
+
+.main-menu__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu__list-item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.main-menu__list-item a {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 16px;
+    color: #0071BB;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 113, 187, 0.2);
+}
+
+.phone {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 22px;
+    color: #EF551B;
+    text-decoration: none;
+}
+
+.infographic-block {
+    display: flex;
+}
+
+.main-header {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 47px;
+    line-height: 56px;
+    color: #333;
+}
+
+.main-promo-text {
+    font-family: 'Bliss Pro';
+    font-size: 18px;
+    line-height: 28px;
+    color: #333;
+}
+
+.order-consultation {
+    height: 44px;
+    background-image: linear-gradient(#E96404, #F44632);
+    font-family: 'Bliss Pro';
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 15px;
+    border: none;
+    border-radius: 2px 0 0 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.order-consultation:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 44px;
+    background-image: url(../images/button-arrow.svg);
+    top: 0;
+    right: -15px;
+}
+
+.infographic-text {
+    padding: 20px 25px;
+}
+
+.infographic-text_sand {
+    background-color: #F9F4F1;
+}
+
+.infographic-text_artesian {
+    background-color: #E8F4FC;
+}
+
+.infographic-text h2 {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 23px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.infographic-text_sand h2 {
+    color: #ED672A;
+}
+
+.infographic-text_artesian h2 {
+    color: #0071BB;
+}
+
+.infographic-text p {
+    font-family: 'Bliss Pro';
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+}
+
+.infographic-img {
+    position: relative;
+    top: -60px;
+    right: -150px;
+}
