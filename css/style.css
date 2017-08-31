@@ -97,10 +97,26 @@
 
 html {
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 html * {
     box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h2 {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 35px;
+    color: #0071BB;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .container {
@@ -190,8 +206,31 @@ html * {
     text-decoration: none;
 }
 
+.first-section {
+    position: relative;
+    background-color: #EAF9FC;
+    background-image: linear-gradient(#fff, #EAF9FC);
+    padding-bottom: 65px;
+}
+
+.first-section:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    background-image: url(../images/first-section-rounding.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
 .infographic-block {
     display: flex;
+}
+
+.left-info {
+    width: 40%;
 }
 
 .main-header {
@@ -235,16 +274,55 @@ html * {
     right: -15px;
 }
 
+.infographic-img {
+    display: flex;
+    align-items: flex-start;
+}
+
 .infographic-text {
     padding: 20px 25px;
+    margin-left: -25px;
+    display: flex;
+    height: 132px;
+    width: 675px;
+    position: relative;
+}
+
+.infographic-text:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: 20px solid transparent;
+    border-bottom: 66px solid transparent;
+    position: absolute;
+    top: 0;
+    right: -40px;
 }
 
 .infographic-text_sand {
     background-color: #F9F4F1;
+    margin-bottom: 50px;
+}
+
+.infographic-text_sand:after {
+    border-top: 66px solid #F9F4F1;
+    border-left: 20px solid #F9F4F1;
 }
 
 .infographic-text_artesian {
     background-color: #E8F4FC;
+    border-color: #E8F4FC;
+}
+
+.infographic-text_artesian:after {
+    border-top: 66px solid #E8F4FC;
+    border-left: 20px solid #E8F4FC;
+}
+
+.infographic-text img {
+    position: absolute;
+    left: 700px;
 }
 
 .infographic-text h2 {
@@ -270,8 +348,808 @@ html * {
     color: #333;
 }
 
-.infographic-img {
+.infographic-block .order-consultation {
+    margin-bottom: 156px;
+}
+
+.infographic-text_sand h2 {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.infographic-text-layout p {
+    font-family: 'Bliss Pro';
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.infographic-img .main-img {
+    margin-top: -660px;
+    margin-left: 120px;
+}
+
+.illustration-block {
+    margin-top: -150px;
+    text-align: center;
+}
+
+.illustration-text {
+    font-family: 'Bliss Pro';
+    width: 60%;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.well-illustration {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.well-illustration-block:not(:last-child) {
+    margin-right: 100px;
+}
+
+.well-type {
+    font-family: 'Bliss Pro';
+    font-weight: 500;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.illustration-artesian .well-type {
+    background-image: linear-gradient(to right, #0071BB, #00AADF);    
+}
+
+.illustration-sand .well-type {
+    background-image: linear-gradient(to right, #F64436, #E86801); 
+}
+
+.illustration-technical .well-type {
+    background-image: linear-gradient(to right, #6D6D6D, #8B8B8B); 
+}
+
+.well-illustration-list {
+    list-style: none;
+    margin: 0;
+    margin-bottom: 220px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.illustration-artesian-block {
+    height: 300px;
+    background-color: #fff;
+    padding: 20px;
+    flex: 1;
+}
+
+.illustration-artesian-block:not(:last-child) {
+    margin-right: 27px;
+}
+
+.illustration-artesian .illustration-artesian-block {
+    border-left: 1px solid #BBDEEE;    
+}
+
+.illustration-sand .illustration-artesian-blocktype {
+    border-left: 1px solid #FFD4C7; 
+}
+
+.illustration-technical .illustration-artesian-blocktype {
+    border-left: 1px solid #E0E0E0; 
+}
+
+.illustration-artesian-block h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.illustration-artesian .illustration-artesian-block h4 {
+    color: #0071BB;
+}
+
+.illustration-sand .illustration-artesian-block h4 {
+    color: #f05022;
+}
+
+.illustration-technical .illustration-artesian-block h4 {
+    color: #797979;
+}
+
+.illustration-artesian-block p {
+    font-family: 'Bliss Pro';
+    font-size: 14px;
+    line-height: 17px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.illustration-artesian-block .well-coast {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 19px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.illustration-artesian-block button {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 15px;
+    color: #ef551b;
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    padding: 0;
+    border-bottom: 1px solid rgba(239, 85, 27, 0.3);
+    cursor: pointer;
+}
+
+.interactive-block {
     position: relative;
-    top: -60px;
-    right: -150px;
+}
+
+.well-up {
+    position: absolute; 
+    z-index: 1;
+    top: 0;  
+    left: -20px;
+    width: 122%;
+}
+
+.well-down {
+    position: absolute;
+    top: 150px;
+    left: -20px;
+    width: 122%;
+    transition: all 0.4s;
+}
+
+.interactive-block.animated .well-down {
+    top: 120px;
+}
+
+.consult-text {
+    font-family: 'Bliss Pro';
+    color: #333;
+    font-size: 18px;
+    line-height: 1.45;
+    margin-bottom: 20px;
+}
+
+.arrangement {
+    padding-bottom: 70px;
+}
+    
+.arrangement-block {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.slider-block {
+    width: 42%;
+    padding-top: 30px;
+}
+
+.second-header {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    color: #0071BB;
+    font-size: 35px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.slider-main {
+    list-style: none;
+}
+
+.slide-caption {
+    font-family: 'Bliss Pro';
+    font-weight: 500;
+    font-size: 18px;
+    color: #0071bb;
+    border: none;
+    background: none;
+    padding: 0;
+    border-bottom: 1px dotted rgba(0, 113, 187, 0.3)
+}
+
+.arrange-text {
+    font-family: 'Bliss Pro';
+    font-size: 18px;
+    line-height: 1.45;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.arrange-coast {
+    display: inline-block;
+    background-color: #ebf9fc;
+    border-radius: 2px;
+    padding: 10px 20px;
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    color: #333;
+    font-size: 20px;
+}
+
+.tube-block {
+    width: 44%;
+}
+
+.tube-block-top {
+    background-image: url(../images/tube-top.png);
+    height: 76px;
+    position: relative;
+    margin-bottom: 14px;
+    filter: drop-shadow(5px 5px 5px #eee);
+    transition: margin-bottom 0.5s;
+}
+
+.tube-block-top:after {
+    content: '';
+    height: 100%;
+    width: 500px;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    background-image: url(../images/tube-pattern.png);
+    background-repeat-y: no-repeat;
+}
+
+.tube-block-center {
+    display: flex;
+    height: 233px;
+    margin-bottom: 14px;
+    transition: margin-bottom 0.5s;
+}
+
+.tube-block.animated .tube-block-top,
+.tube-block.animated .tube-block-center {
+    margin-bottom: 0;
+}
+
+.tube-left {
+    height: 100%;
+    width: 75px;
+    background-image: url(../images/tube-left.png);
+    background-repeat: no-repeat;
+    filter: drop-shadow(5px 5px 5px #eee);
+}
+
+.tube-center-info {
+    padding: 25px 45px;
+}
+
+.tube-block-center h3 {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    color: #333;
+    font-size: 23px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.tube-block-center p {
+    font-family: 'Bliss Pro';
+    color: #333;
+    font-size: 18px;
+    line-height: 1.45;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.tube-block-bottom {
+    background-image: url(../images/tube-bottom.png);
+    height: 76px;
+    position: relative;
+    filter: drop-shadow(5px 5px 5px #eee);
+}
+
+.tube-block-bottom:after {
+    content: '';
+    height: 100%;
+    width: 500px;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    background-image: url(../images/tube-pattern.png);
+    background-position: bottom;
+    background-repeat-y: no-repeat;
+}
+
+.delivery {
+    background-image: url(../images/clouds.png);
+    background-position: center;
+    background-repeat-y: no-repeat;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    animation: run-cloud 50s linear forwards infinite;
+}
+
+.delivery h3 {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    color: #0071BB;
+    font-size: 23px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.delivery-info {
+    display: flex;
+    align-items: center;
+}
+
+.delivery-text {
+    font-family: 'Bliss Pro';
+    color: #333;
+    font-size: 18px;
+    line-height: 1.45;
+    margin-right: 15px;
+}
+
+.truck-road {
+    background-image: url(../images/truck-pattern.png);
+    background-repeat: repeat no-repeat;
+    background-position: bottom;    
+}
+
+.road {
+    height: 48px;
+    background-image: url(../images/line.png);
+    background-repeat-y: no-repeat;
+    background-position-y: center;
+    background-position-x: 0;
+    position: relative;
+    animation: run-road 0.2s linear forwards infinite;
+}
+
+.truck {
+    position: absolute;
+    top: -25px;
+    left: 150px;
+}
+
+.stages {
+    background-image: linear-gradient(#454545, #5e5e5e);
+    padding-top: 75px;
+    padding-bottom: 75px;
+    position: relative;
+}
+
+.stages-header {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.stages-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stages-list > li {
+    height: 300px;
+    position: relative;
+    width: 130px;
+}
+
+.stages-list > li:not(:last-child):after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 260%;
+    background-color: #606060;
+    top: 100px;
+    left: 100%;
+}
+
+.stage-img-wrap {
+    margin-top: 0;
+    margin-bottom: 10px;
+    height: 140px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.stages-list h4 {
+    font-family: 'Bliss Pro';
+    font-weight: normal;
+    font-size: 18px;
+    color: #f15222;
+    position: absolute;
+    top: 140px;
+    width: 260px;
+}
+
+.stages-list p {
+    font-family: 'Bliss Pro';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 200px;
+    width: 260px;
+}
+
+.drill {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+}
+
+.certificates {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    background-image: url(../images/certificates-section-rounding.png);
+    background-repeat: no-repeat;
+    background-position: center 101%;
+    background-position: center bottom -1px;
+}
+
+.certificates-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.certificates-slider-block {
+    width: 58%;
+}
+
+.certificates h2 {
+    margin-bottom: 50px;
+}
+
+.certificates-slider {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.certificates-slide {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certificates-slide:not(:last-child) {
+    margin-right: 50px;
+}
+
+.certificates-slide-img-wrap {
+    margin-bottom: 20px;
+}
+
+.certificates-slide-text {
+    text-align: center;
+}
+
+.certificates-slide-text a {
+    font-family: 'Bliss Pro';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.45;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.certificates-slide-text a:hover {
+    color: #0071BB;
+    border-bottom: 1px solid rgba(0, 113, 187, 0.2);
+}
+
+.certificates-passport {
+    width: 31%;
+}
+
+.passport-block {
+    display: flex;
+}
+
+.passport-block-img-wrap {
+    margin-right: 23px;
+}
+
+.passport-text {
+    padding-top: 20px;
+    font-family: 'Bliss Pro';
+    font-size: 18px;
+    line-height: 1.45;
+    color: #333;
+}
+
+.passport-text p {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.about-company {
+    background-color: #EAF9FC;
+    padding-top: 40px;
+    padding-bottom: 35px;
+}
+
+.about-company-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-company h3 {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.77;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.about-company p {
+    font-family: 'Bliss Pro';
+    font-size: 18px;
+    line-height: 1.45;
+    color: #333;
+    margin-top: 0;
+}
+
+.additional-services {
+    width: 62%;
+}
+
+.additional-services-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.additional-services-list li {
+    position: relative;
+    width: 28%;
+}
+
+.additional-services-list li img {
+    position: absolute;
+    top: 0;
+    left: -70px;
+}
+
+.additional-services-list h4 {
+    font-family: 'Bliss Pro';
+    font-weight: 500;
+    color: #333;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.coast {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    color: #EF551D;
+    font-size: 18px;
+}
+
+.additional-services-specifying-block {
+    padding: 15px 20px 15px 25px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    position: relative;
+    margin-left: -25px;
+}
+
+.additional-services-specifying-block:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -40px;
+    border-top: 40px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 20px solid #fff;
+}
+
+.additional-services-specifying-block span {
+    font-family: 'Bliss Pro';
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    margin-right: 30px;
+}
+
+.about-company-block {
+    width: 31%;
+}
+
+.map-section {
+    height: 500px; // temp
+}
+
+.map-info-block {
+    width: 260px;
+    position: relative;
+    top: 90px;
+    margin-left: -25px;
+    padding: 35px 25px;
+    background-color: #fff;
+    border: 1px solid #D9E9EC;
+}
+
+.map-info-block h3 {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    color: #333;
+    font-size: 22px;
+    line-height: 1.77;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.map-info-block p {
+    font-family: 'Bliss Pro';
+    color: #333;
+    font-size: 18px;
+    line-height: 1.45;
+    margin-top: 0;
+}
+
+.footer {
+    background-color: #4E757C;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    width: 20%;
+}
+
+.footer-logo .logo-wrapper__logo {
+    margin-bottom: 15px;
+}
+
+.logo-sub-text {
+    font-family: 'Bliss Pro';
+    font-size: 16px;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-menu > li {
+    width: 50%;
+}
+
+.footer-menu > li a {
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #A6BABD;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(166, 186, 189, 0.3);
+}
+
+.footer-contacts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-address {
+    width: 45%;
+}
+
+.physical-address {
+    font-family: 'Bliss Pro';
+    font-size: 16px;
+    line-height: 1.5;
+    color: #A6BABD;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.footer-address a {
+    font-family: 'Bliss Pro';
+    font-size: 16px;
+    line-height: 1.5;
+    color: #A6BABD;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(166, 186, 189, 0.3);
+}
+
+.footer-phone {
+    width: 45%;
+}
+
+.footer-phone .phone {
+    display: block;
+    font-family: 'Bliss Pro';
+    font-weight: 800;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.copyright {
+    font-family: 'Bliss Pro';
+    font-size: 16px;
+    color: #A6BABD;
+    text-align: right;
+}
+
+.copyright a {
+    color: #E86702;
+}
+
+
+@keyframes run-cloud {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -750px;
+    }
+}
+
+@keyframes run-road {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -30px;
+    }
 }
