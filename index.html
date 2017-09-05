@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -57,7 +58,7 @@
                 </div>
             </div>
             <div class="container illustration-block">
-                <h2 class="second-header">Бурение и обсадка</h2>
+                <h2 class="second-header illustration-block-header">Бурение и обсадка</h2>
                 <p class="illustration-text">Труба нужна, чтобы защитить скважину от обвалов грунта: под давлением стенки скважины могут деформироваться и осыпаться землей. Также обсадные трубы защищают воду от попадания различных примесей.</p>
                 <div class="well-illustration">
                     <div class="well-illustration-block illustration-artesian">
@@ -70,7 +71,7 @@
                                 <button type="button">Заказать</button>
                                 <div class="interactive-block">
                                     <img src="images/well-up.png" alt="" class="well-up">
-                                    <img src="images/well-down.png" alt="" class="well-down">
+                                    <img src="images/m_down.png" alt="" class="well-down">
                                 </div>
                             </li>
                             <li class="illustration-artesian-block">
@@ -78,14 +79,20 @@
                                 <p>Не так прочен, как металл, но полностью исключает появление ржавчины.</p>
                                 <div class="well-coast">2 300 ₽/метр</div>
                                 <button type="button">Заказать</button>
-                                <div class="interactive-block"></div>
+                                <div class="interactive-block">
+                                    <img src="images/p_up.png" alt="" class="well-up">
+                                    <img src="images/p_down.png" alt="" class="well-down">
+                                </div>
                             </li>
                             <li class="illustration-artesian-block">
                                 <h4>Металл + пластик</h4>
                                 <p>Комбинированная труба: защищает от деформации снаружи и от коррозии и загрязнения внутри.</p>
                                 <div class="well-coast">2 300 ₽/метр</div>
                                 <button type="button">Заказать</button>
-                                <div class="interactive-block"></div>
+                                <div class="interactive-block">
+                                    <img src="images/m+p_up.png" alt="" class="well-up">
+                                    <img src="images/m_down.png" alt="" class="well-down">
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -97,14 +104,20 @@
                                 <p>Устойчив перед любым давлением, которое создают подвижные пласты земли.</p>
                                 <div class="well-coast">2 300 ₽/метр</div>
                                 <button type="button">Заказать</button>
-                                <div class="interactive-block"></div>
+                                <div class="interactive-block">
+                                    <img src="images/well-up.png" alt="" class="well-up">
+                                    <img src="images/m_down(pesch).png" alt="" class="well-down">
+                                </div>
                             </li>
                             <li class="illustration-artesian-block">
                                 <h4>Пластик</h4>
                                 <p>Не так прочен, как металл, но полностью исключает появление ржавчины.</p>
                                 <div class="well-coast">2 300 ₽/метр</div>
                                 <button type="button">Заказать</button>
-                                <div class="interactive-block"></div>
+                                <div class="interactive-block">
+                                    <img src="images/p_up.png" alt="" class="well-up">
+                                    <img src="images/p_down(pesch).png" alt="" class="well-down">
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -116,7 +129,10 @@
                                 <p>Для полива огорода и промышленных нужд. Вода содержит поверхностные загрязнения.</p>
                                 <div class="well-coast">1 500 ₽/метр</div>
                                 <button type="button">Заказать</button>
-                                <div class="interactive-block"></div>
+                                <div class="interactive-block">
+                                    <img src="images/tehn_up.png" alt="" class="well-up">
+                                    <img src="images/tehn_down.png" alt="" class="well-down">
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -129,38 +145,30 @@
             <div class="container arrangement-block">
                 <div class="slider-block">
                     <h2 class="second-header">Обустройство</h2>
-                    <ul class="slider-main">
-                        <li>
-                            <input type="radio" name="arrange" id="arrange1">
-                            <label for="arrange1">
-                                <button class="slide-caption">Кессон</button>
-                                <p class="arrange-text">Массивная металлическая капсула, в которую устанавливается все необходимое оборудование. Глушит шум работающего насоса и защищает скважину от мусора и грунтовой воды.</p>
-                                <div class="arrange-coast">7 500 ₽</div>
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" name="arrange" id="arrange2">
-                            <label for="arrange2">
-                                <button class="slide-caption">Технический кран</button>
-                                <p class="arrange-text">Массивная металлическая капсула, в которую устанавливается все необходимое оборудование. Глушит шум работающего насоса и защищает скважину от мусора и грунтовой воды.</p>
-                                <div class="arrange-coast">7 500 ₽</div>
-                            </label>
-                        </li>
-                        <li>
-                            <input type="radio" name="arrange" id="arrange3">
-                            <label for="arrange3">
-                                <button class="slide-caption">Скважинный адаптер</button>
-                                <p class="arrange-text">Массивная металлическая капсула, в которую устанавливается все необходимое оборудование. Глушит шум работающего насоса и защищает скважину от мусора и грунтовой воды.</p>
-                                <div class="arrange-coast">7 500 ₽</div>
-                            </label>
-                        </li>
-                    </ul>
-                    <div class="slide-arrows">
-                        <button class="prev" type="button"></button>
-                        <button class="next" type="button"></button>
+                    <div class="slider-main-tabs">
+                        <button id="kesson" class="slide-caption active">Кессон</button>
+                        <button id="technical" class="slide-caption">Технический кран</button>
+                        <button id="adapter" class="slide-caption">Скважинный адаптер</button>
+                    </div>
+                    <div class="slider-main">
+                        <div class="slider-main__slide active" data-name="kesson">
+                            <p class="arrange-text">1Массивная металлическая капсула, в которую устанавливается все необходимое оборудование. Глушит шум работающего насоса и защищает скважину от мусора и грунтовой воды.</p>
+                            <div class="arrange-coast">7 500 ₽</div>
+                            <img src="images/pump.png" alt="">
+                        </div>
+                        <div class="slider-main__slide" data-name="technical">
+                            <p class="arrange-text">2Массивная металлическая капсула, в которую устанавливается все необходимое оборудование. Глушит шум работающего насоса и защищает скважину от мусора и грунтовой воды.</p>
+                            <div class="arrange-coast">7 500 ₽</div>
+                            <img src="images/pump.png" alt="">
+                        </div>
+                        <div class="slider-main__slide" data-name="adapter">
+                            <p class="arrange-text">3Массивная металлическая капсула, в которую устанавливается все необходимое оборудование. Глушит шум работающего насоса и защищает скважину от мусора и грунтовой воды.</p>
+                            <div class="arrange-coast">7 500 ₽</div>
+                            <img src="images/pump.png" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="tube-block animated">
+                <div class="tube-block">
                     <div class="tube-block-top"></div>
                     <div class="tube-block-center">
                         <div class="tube-left"></div>
@@ -230,32 +238,44 @@
             <div class="container certificates-container">
                 <div class="certificates-slider-block">
                     <h2>Сертификаты и разрешения на деятельность</h2>
-                    <ul class="certificates-slider">
-                        <li class="certificates-slide">
+                    <div class="certificates-slider">
+                        <div class="certificates-slide">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
                             <div class="certificates-slide-text"><a href="">Разрешение на бурение в Московской области</a></div>
-                        </li>
-                        <li class="certificates-slide">
+                        </div>
+                        <div class="certificates-slide">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
                             <div class="certificates-slide-text"><a href="">Лучший бурильщик 2017 года</a></div>
-                        </li>
-                        <li class="certificates-slide">
+                        </div>
+                        <div class="certificates-slide">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
                             <div class="certificates-slide-text"><a href="">Сертификат за заслуги перед отечеством</a></div>
-                        </li>
-                        <li class="certificates-slide">
+                        </div>
+                        <div class="certificates-slide">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
                             <div class="certificates-slide-text"><a href="">Разрешение на бурение артезианских скважин</a></div>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="certificates-slide">
+                            <div class="certificates-slide-img-wrap">
+                                <img src="images/sertificate.png" alt="">
+                            </div>
+                            <div class="certificates-slide-text"><a href="">Сертификат за заслуги перед отечеством</a></div>
+                        </div>
+                        <div class="certificates-slide">
+                            <div class="certificates-slide-img-wrap">
+                                <img src="images/sertificate.png" alt="">
+                            </div>
+                            <div class="certificates-slide-text"><a href="">Разрешение на бурение артезианских скважин</a></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="certificates-passport">
                     <h2>Паспорт скважины</h2>
@@ -346,5 +366,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

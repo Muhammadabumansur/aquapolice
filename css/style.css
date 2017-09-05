@@ -260,6 +260,7 @@ h2 {
     border: none;
     border-radius: 2px 0 0 2px;
     position: relative;
+    z-index: 1;
     cursor: pointer;
 }
 
@@ -376,9 +377,14 @@ h2 {
     text-align: center;
 }
 
+.illustration-block-header {
+    text-align: left;
+}
+
 .illustration-text {
     font-family: 'Bliss Pro';
     width: 60%;
+    text-align: left;
     color: #333;
     font-size: 18px;
     line-height: 1.5;
@@ -389,6 +395,18 @@ h2 {
     display: flex;
     justify-content: space-between;
     text-align: left;
+}
+
+.well-illustration-block {
+    margin-top: 50px;
+    opacity: 0;
+    transform-origin: bottom;
+    transition: all 0.6s;
+}
+
+.well-illustration.animated .well-illustration-block {
+    margin-top: 0;
+    opacity: 1;
 }
 
 .well-illustration-block:not(:last-child) {
@@ -432,10 +450,11 @@ h2 {
 }
 
 .illustration-artesian-block {
-    height: 300px;
+    height: 340px;
     background-color: #fff;
     padding: 20px;
     flex: 1;
+    width: 230px;
 }
 
 .illustration-artesian-block:not(:last-child) {
@@ -480,6 +499,7 @@ h2 {
     line-height: 17px;
     color: #333;
     margin-bottom: 15px;
+    height: 70px;
 }
 
 .illustration-artesian-block .well-coast {
@@ -559,8 +579,43 @@ h2 {
     margin-bottom: 25px;
 }
 
+.slider-main-tabs {
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    z-index: 5;
+}
+
+.slider-main-tabs button {
+    outline: none;
+    cursor: pointer;
+}
+
 .slider-main {
-    list-style: none;
+    position: relative;
+    top: -40px;
+}
+
+.slider-main__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    padding-right: 200px;
+    padding-top: 50px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.slider-main__slide.active {
+    opacity: 1;
+}
+
+.slider-main__slide img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .slide-caption {
@@ -572,6 +627,15 @@ h2 {
     background: none;
     padding: 0;
     border-bottom: 1px dotted rgba(0, 113, 187, 0.3)
+}
+
+.slide-caption:not(:last-child) {
+    margin-right: 45px;
+}
+
+.slide-caption.active {
+    color: #333;
+    border: none;
 }
 
 .arrange-text {
@@ -631,14 +695,33 @@ h2 {
 
 .tube-left {
     height: 100%;
-    width: 75px;
+    width: 80px;
+    position: relative;
+    left: -7px;
     background-image: url(../images/tube-left.png);
     background-repeat: no-repeat;
+    background-position: center;
     filter: drop-shadow(5px 5px 5px #eee);
+}
+
+.tube-left:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 83px;
+    width: 80px;
+    height: 81px;
+    background-image: url(../images/ventil.png);
+    transition: transform 2.5s
+}
+
+.tube-left.animated:before {
+    transform: rotateZ(-585deg)
 }
 
 .tube-center-info {
     padding: 25px 45px;
+    position: relative;
 }
 
 .tube-block-center h3 {
@@ -832,11 +915,23 @@ h2 {
     margin-bottom: 50px;
 }
 
-.certificates-slider {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+.certificates-slider .flickity-prev-next-button {
+    top: 40%;
+    width: 80px;
+    height: 80px;
+    background: none;
+}
+
+.certificates-slider .flickity-prev-next-button svg .arrow {
+    fill: #E6F0F9;
+}
+
+.certificates-slider .flickity-prev-next-button.previous {
+    left: -80px;
+}
+
+.certificates-slider .flickity-prev-next-button.next {
+    right: -80px;
 }
 
 .certificates-slide {
@@ -844,14 +939,17 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.certificates-slide:not(:last-child) {
-    margin-right: 50px;
+    margin-right: 50px
 }
 
 .certificates-slide-img-wrap {
     margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.certificates-slide:hover .certificates-slide-img-wrap {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 20px -10px #d5d5d5;
 }
 
 .certificates-slide-text {
@@ -868,7 +966,7 @@ h2 {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.certificates-slide-text a:hover {
+.certificates-slide:hover .certificates-slide-text a {
     color: #0071BB;
     border-bottom: 1px solid rgba(0, 113, 187, 0.2);
 }
