@@ -6,12 +6,25 @@ var ventileContainer = document.querySelector('.tube-left');
 var sliderMainTabs = document.querySelector('.slider-main-tabs');
 var sliderMainTabsButtons = sliderMainTabs.children;
 var sliderMainSlides = document.querySelectorAll('.slider-main__slide');
+var infographicImgWrap = document.querySelector('.infographic-img-wrap');
+var aboutCompanyThumbs = document.querySelector('.about-company-thumbs');
+var aboutCompanyMainImage = document.querySelector('.about-company-main-photo img');
+
+var infographicAnimate = function() {
+    var pageHeight = document.documentElement.clientHeight;
+    var infographicImgWrapTopOffset = infographicImgWrap.getBoundingClientRect().top;
+    var infographicImgWrapBottomOffset = pageHeight - infographicImgWrapTopOffset;
+    if (infographicImgWrapBottomOffset > 200) {
+        infographicImgWrap.classList.add('animated');
+        window.removeEventListener('scroll', infographicAnimate)
+    }
+}
 
 var wellBlockAppear = function() {
     var pageHeight = document.documentElement.clientHeight;
     var wellBlockTopOffset = wellBlock.getBoundingClientRect().top;
     var wellBlockBottomOffset = pageHeight - wellBlockTopOffset;
-    if (wellBlockBottomOffset > 250) {
+    if (wellBlockBottomOffset > 550) {
         wellBlock.classList.add('animated');
         window.removeEventListener('scroll', wellBlockAppear)
     }
@@ -25,7 +38,7 @@ var wellInteractiveAnimate = function() {
     var pageHeight = document.documentElement.clientHeight;
     var wellBlockTopOffset = wellBlock.getBoundingClientRect().top;
     var wellBlockBottomOffset = pageHeight - wellBlockTopOffset;
-    if (wellBlockBottomOffset > 600) {
+    if (wellBlockBottomOffset > 700) {
         interactiveBlocs.forEach(wellImageUp)
         window.removeEventListener('scroll', wellInteractiveAnimate)
     }
@@ -35,7 +48,7 @@ var tubeAnimate = function() {
     var pageHeight = document.documentElement.clientHeight;
     var tubeBlockTopOffset = tubeBlock.getBoundingClientRect().top;
     var tubeBlockBottomOffset = pageHeight - tubeBlockTopOffset;
-    if (tubeBlockBottomOffset > 450) {
+    if (tubeBlockBottomOffset > 500) {
         tubeBlock.classList.add('animated');
         window.removeEventListener('scroll', tubeAnimate)
     }
@@ -45,11 +58,21 @@ var ventileSpin = function() {
     ventileContainer.classList.add('animated');
 }
 
+var pickPhoto = function(e) {
+    e.preventDefault();
+    if (e.target.src) {
+        aboutCompanyMainImage.src = e.target.src
+    }
+}
+
 window.addEventListener('scroll', wellBlockAppear);
 window.addEventListener('scroll', wellInteractiveAnimate);
 window.addEventListener('scroll', tubeAnimate);
+window.addEventListener('scroll', infographicAnimate);
 
 tubeAnimatedBlock.addEventListener('transitionend', ventileSpin);
+
+aboutCompanyThumbs.addEventListener('click', pickPhoto)
 
 var certificatesSlider = document.querySelector('.certificates-slider');
 if(certificatesSlider) {

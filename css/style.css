@@ -281,7 +281,6 @@ h2 {
 }
 
 .infographic-text {
-    padding: 20px 25px;
     margin-left: -25px;
     display: flex;
     height: 132px;
@@ -289,7 +288,14 @@ h2 {
     position: relative;
 }
 
-.infographic-text:after {
+.infographic-text-wrapper {
+    position: relative;
+    padding: 20px 25px;
+    opacity: 0;
+    transform: translateX(-1500px)
+}
+
+.infographic-text-wrapper:after {
     content: '';
     display: block;
     width: 0;
@@ -301,29 +307,70 @@ h2 {
     right: -40px;
 }
 
+.infographic-img-wrap.animated .infographic-text-wrapper {
+    opacity: 1;
+    transform: translateX(0)
+}
+
 .infographic-text_sand {
-    background-color: #F9F4F1;
     margin-bottom: 50px;
 }
 
-.infographic-text_sand:after {
+.infographic-text_sand .infographic-text-wrapper {
+    background-color: #F9F4F1;
+    /* transition: opacity 1s 0.7s; */
+    transition: transform 0.5s, opacity 2s;
+}
+
+.infographic-text_sand .infographic-text-wrapper:after {
     border-top: 66px solid #F9F4F1;
     border-left: 20px solid #F9F4F1;
 }
 
-.infographic-text_artesian {
+.infographic-text_artesian  .infographic-text-wrapper {
     background-color: #E8F4FC;
     border-color: #E8F4FC;
+    /* transition: opacity 1s 1.2s; */
+    transition: transform 0.5s 0.5s, opacity 2s 0.5s;
 }
 
-.infographic-text_artesian:after {
+.infographic-text_artesian  .infographic-text-wrapper:after {
     border-top: 66px solid #E8F4FC;
     border-left: 20px solid #E8F4FC;
 }
 
+.infographic-text svg {
+    position: absolute;
+    top: 70px;
+    left: 695px;
+}
+
+.infographic-text .path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+
+.infographic-img-wrap.animated .infographic-text_sand .path {
+    animation: dash 2s linear forwards;
+}
+
+.infographic-img-wrap.animated .infographic-text_artesian .path {
+    animation: dash 2s linear 0.5s forwards;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
 .infographic-text img {
     position: absolute;
-    left: 700px;
+    left: 1035px;
+    top: 38px;
 }
 
 .infographic-text h2 {
@@ -350,7 +397,7 @@ h2 {
 }
 
 .infographic-block .order-consultation {
-    margin-bottom: 156px;
+    margin-bottom: 136px;
 }
 
 .infographic-text_sand h2 {
@@ -368,7 +415,7 @@ h2 {
 }
 
 .infographic-img .main-img {
-    margin-top: -660px;
+    margin-top: -640px;
     margin-left: 120px;
 }
 
@@ -893,6 +940,90 @@ h2 {
     width: 100%;
 }
 
+.about-company {
+    padding-top: 130px;
+    padding-bottom: 20px;
+}
+
+.about-company-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-company-text {
+    width: 25%;
+}
+
+.about-company-text p {
+    font-family: 'Bliss Pro';
+    font-size: 18px;
+    line-height: 1.55;
+    color: #333;
+}
+
+.about-company-main-text {
+    margin-bottom: 60px;
+}
+
+.look-at-our-works {
+    position: relative;
+}
+
+.look-at-our-works:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 200px;
+    width: 218px;
+    height: 113px;
+    background-image: url(../images/curve-arrow.svg);
+    background-repeat: no-repeat;
+}
+
+.about-company-photos {
+    width: 72%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-company-main-photo {
+    width: 83%;
+    height: 630px;
+    border: 8px solid #eee;
+    overflow: hidden;
+}
+
+.about-company-main-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-company-thumbs {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-company-thumbs a {
+    display: block;
+    border: 4px solid #eee;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.about-company-thumbs a:hover {
+    border-color: #0071BB;
+}
+
+.about-company-thumbs a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .certificates {
     padding-top: 120px;
     padding-bottom: 100px;
@@ -996,18 +1127,22 @@ h2 {
     margin-bottom: 25px;
 }
 
-.about-company {
+.additional {
     background-color: #EAF9FC;
+    background-image: url(../images/side-tube.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
     padding-top: 40px;
     padding-bottom: 35px;
 }
 
-.about-company-container {
+.additional-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.about-company h3 {
+.additional h3 {
     font-family: 'Bliss Pro';
     font-weight: 800;
     font-size: 22px;
@@ -1017,7 +1152,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-.about-company p {
+.additional p {
     font-family: 'Bliss Pro';
     font-size: 18px;
     line-height: 1.45;
@@ -1026,7 +1161,7 @@ h2 {
 }
 
 .additional-services {
-    width: 62%;
+    width: 70%;
 }
 
 .additional-services-list {
@@ -1040,7 +1175,8 @@ h2 {
 
 .additional-services-list li {
     position: relative;
-    width: 28%;
+    width: 33%;
+    padding-right: 70px;
 }
 
 .additional-services-list li img {
@@ -1065,12 +1201,18 @@ h2 {
     font-size: 18px;
 }
 
+.specifying-block {
+    flex: 1;
+}
+
 .additional-services-specifying-block {
     padding: 15px 20px 15px 25px;
-    height: 80px;
+    height: 168px;
+    width: 358px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
     background-color: #fff;
     position: relative;
     margin-left: -25px;
@@ -1081,23 +1223,19 @@ h2 {
     display: block;
     position: absolute;
     top: 0;
-    right: -40px;
-    border-top: 40px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 40px solid transparent;
-    border-left: 20px solid #fff;
+    right: -80px;
+    border-top: 84px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 84px solid transparent;
+    border-left: 40px solid #fff;
 }
 
 .additional-services-specifying-block span {
     font-family: 'Bliss Pro';
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     color: #333;
     margin-right: 30px;
-}
-
-.about-company-block {
-    width: 31%;
 }
 
 .map-section {
