@@ -15,19 +15,49 @@
                 <img src="images/header-logo.png" alt="Акваполис" class="logo-wrapper__logo">
             </div>
             <nav class="main-menu">
-                <ul class="main-menu__list">
-                    <li class="main-menu__list-item"><a href="" class="main-menu__link">Стоимость</a></li>
-                    <li class="main-menu__list-item"><a href="" class="main-menu__link">Обустройство</a></li>
-                    <li class="main-menu__list-item"><a href="" class="main-menu__link">Выезд</a></li>
-                    <li class="main-menu__list-item"><a href="" class="main-menu__link">Подключение</a></li>
-                    <li class="main-menu__list-item"><a href="" class="main-menu__link">Услуги</a></li>
-                    <li class="main-menu__list-item"><a href="" class="main-menu__link">Контакты</a></li>
-                </ul>
+                <a class="hamburger" href="">
+                    <svg width="21px" height="17px" viewBox="0 0 21 17" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g class="hamburger-icon" stroke="#248DCD" stroke-width="2" stroke-linecap="round">
+                            <path d="M0.5,1 L18.5,1"></path>
+                            <path d="M0.5,8.5 L18.5,8.5"></path>
+                            <path d="M0.5,16 L18.5,16"></path>
+                        </g>
+                    </svg>
+                </a>
+                <div class="main-menu-block closed">
+                    <div class="main-menu-wrapper">
+                        <a class="main-menu-close-mobile" href="">
+                            <svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g fill="none" fill-rule="evenodd" stroke-linecap="round">
+                                    <g stroke="#FFFFFF" stroke-width="2">
+                                        <path d="M5.32907052e-15,0 L14.8492424,14.8492424"></path>
+                                        <path d="M5.32907052e-15,0 L14.8492424,14.8492424" transform="translate(7.424621, 7.424621) scale(-1, 1) translate(-7.424621, -7.424621) "></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                        <div class="main-menu-logo-mobile">
+                            <img src="images/logo-white.png" alt="">
+                        </div>
+                        <ul class="main-menu__list">
+                            <li class="main-menu__list-item"><a href="" class="main-menu__link">Стоимость</a></li>
+                            <li class="main-menu__list-item"><a href="" class="main-menu__link">Обустройство</a></li>
+                            <li class="main-menu__list-item"><a href="" class="main-menu__link">Выезд</a></li>
+                            <li class="main-menu__list-item"><a href="" class="main-menu__link">Подключение</a></li>
+                            <li class="main-menu__list-item"><a href="" class="main-menu__link">Услуги</a></li>
+                            <li class="main-menu__list-item"><a href="" class="main-menu__link">Контакты</a></li>
+                        </ul>
+                        <div class="main-menu-bottom-mobile">
+                            <a class="phone-mobile" href="tel:+78005003435">8 800 500-34-35</a>
+                            <button class="order-consultation" type="button">Заказать скважину</button>
+                        </div>
+                    </div>
+                </div>
             </nav>
             <a class="phone" href="tel:+78005003435">8 800 500-34-35</a>
         </div>
     </header>
-    <main>
+    <main class="main">
         <section class="first-section">
             <div class="container infographic-block">
                 <div class="left-info">
@@ -49,7 +79,7 @@
                                 width="360px" height="100px" viewBox="0 0 360 100">
                                     <path class="path" fill="none" stroke="#ED672A" stroke-width="1" stroke-miterlimit="10" d="M358.56805,33.896917 C311.56526,54.502445 257.36605,60.093591 195.97039,50.670354 C134.574734,41.247117 73.917938,25.356999 14,3"/>
                                 </svg>
-                                <img src="images/tube-1.png" alt="">
+                                <a class="infographic-btn" href=""><img src="images/tube-1.png" alt=""></a>
                             </div>
                             <div class="infographic-text infographic-text_artesian">
                                 <div class="infographic-text-wrapper">
@@ -62,7 +92,7 @@
                                 width="360px" height="100px" viewBox="0 0 360 100">
                                     <path class="path" fill="none" stroke="#0071BB" stroke-width="1" stroke-miterlimit="10" d="M358.56805,33.896917 C311.56526,54.502445 257.36605,60.093591 195.97039,50.670354 C134.574734,41.247117 73.917938,25.356999 14,3"/>
                                 </svg>
-                                <img src="images/tube-2.png" alt="">
+                                <a class="infographic-btn" href=""><img src="images/tube-2.png" alt=""></a>
                             </div>
                         </div>
                         <img class="main-img" src="images/infographic.png" alt="">
@@ -182,6 +212,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="certificates-passport-mobile">
+                    <h2>Паспорт скважины</h2>
+                    <div class="passport-block">
+                        <div class="passport-text">
+                            <p>Вода из глубинных скважин считается ценным ресурсом. Чтобы использовать ее, необходимо зарегистрироваться в Госреестре.</p>
+                            <p>Паспорт — доказательство, что вы законно используете скважину.</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="tube-block">
                     <div class="tube-block-top"></div>
                     <div class="tube-block-center">
@@ -221,6 +260,7 @@
                         </div>
                         <h4>Оставляете заявку</h4>
                         <p>Вы оставляете заявку на сайте. Менеджер перезванивает, чтобы уточнить некоторые детали и ваш адрес.</p>
+                        <button class="order-consultation order-consultation_mobile" type="button">Оставить заявку</button> 
                     </li>
                     <li>
                         <div class="stage-img-wrap">
@@ -244,7 +284,7 @@
                         <p>Вы осматриваете скважину и проверяете чистоту воды. Если все хорошо – рассчитываемся окончательно.</p>
                     </li>
                 </ul>
-                <button class="order-consultation" type="button">Оставить заявку</button>                        
+                <button class="order-consultation order-consultation_desktop" type="button">Оставить заявку</button>                        
                 <img class="drill" src="images/drill.png" alt="">
             </div>
         </section>
@@ -394,8 +434,8 @@
                 </div>
             </div>
             <div class="copyright">
-                "Акваполис" - 2017 &copy; <br>
-                Сайт разработан в <a href="http://color-it.ru/">"Color-IT"</a>
+                <div class="copyright-text">"Акваполис" - 2017 &copy;</div>
+                <div class="dev-by">Сайт разработан в <a href="http://color-it.ru/">"Color-IT"</a></div>
             </div>
         </div>
     </footer>
