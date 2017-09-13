@@ -74,7 +74,10 @@ var pickPhoto = function(e) {
     }
 }
 
-window.addEventListener('scroll', wellBlockAppear);
+if (DESKTOP_MODE) {
+    window.addEventListener('scroll', wellBlockAppear);
+}
+
 window.addEventListener('scroll', wellInteractiveAnimate);
 window.addEventListener('scroll', tubeAnimate);
 window.addEventListener('scroll', infographicAnimate);
@@ -108,6 +111,22 @@ if(MOBILE_MODE && aboutCompanySlider) {
       cellAlign: 'left',
       wrapAround: true,
       autoPlay: true,
+      groupCells: 1,
+      arrowShape: { 
+        x0: 15,
+        x1: 55, y1: 50,
+        x2: 60, y2: 45,
+        x3: 25
+      }
+    });
+}
+
+var wellIllustrationSlider = document.querySelector('.well-illustration-list');
+if(MOBILE_MODE && wellIllustrationSlider) {
+    var wellIllustrationSliderFlkty = new Flickity( wellIllustrationSlider, {
+      // options
+      cellAlign: 'left',
+      pageDots: false,
       groupCells: 1,
       arrowShape: { 
         x0: 15,
