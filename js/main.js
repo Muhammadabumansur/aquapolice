@@ -97,8 +97,13 @@ if (MOBILE_MODE) {
     infographicButtons.forEach(function(el, ind, arr) {
         arr[ind].addEventListener('click', showInfographicPopup)
     })
+} else {
+    infographicButtons.forEach(function(el, ind, arr) {
+        arr[ind].addEventListener('click', function(e) {
+            e.preventDefault();
+        })
+    })
 }
-
 
 var infographicAnimate = function() {
     var pageHeight = document.documentElement.clientHeight;

@@ -1647,7 +1647,7 @@ h2 {
 
 .tube-left {
     height: 100%;
-    width: 80px;
+    width: 136px;
     position: relative;
     left: -7px;
     background-image: url(../images/tube-left.png);
@@ -1814,7 +1814,7 @@ h2 {
     color: #333;
     font-size: 18px;
     line-height: 1.45;
-    margin-right: 15px;
+    margin-right: 25px;
 }
 
 @media (max-width: 1650px) {
@@ -2375,6 +2375,7 @@ h2 {
 }
 
 .certificates-slide {
+    padding-top: 10px;
     width: 200px;
     display: flex;
     flex-direction: column;
