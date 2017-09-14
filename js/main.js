@@ -2,6 +2,7 @@ var DESKTOP_MODE = window.innerWidth > 1300;
 var MOBILE_MODE = window.innerWidth <= 1300;
 
 var body = document.querySelector('body');
+var main = document.querySelector('.main');
 var wellBlock = document.querySelector('.well-illustration');
 var tubeBlock = document.querySelector('.tube-block');
 var interactiveBlocs = document.querySelectorAll('.interactive-block');
@@ -17,6 +18,86 @@ var mobileMenuBlock = document.querySelector('.main-menu-block');
 var showMobileMenuBtn = document.querySelector('.hamburger');
 var hideMobileMenuBtn = document.querySelector('.main-menu-close-mobile');
 var mobileMenuHeight = parseInt(getComputedStyle(mobileMenuBlock).height);
+var backCallers = document.querySelectorAll('.back-caller');
+var popupСallback = document.querySelector('.popup-callback');
+var popupСloseBtn = document.querySelector('.close-button');
+var infographicButtons = document.querySelectorAll('.infographic-btn');
+var topDocumentScroll;
+
+var switchOffCallbackPopupVisibility = function() {
+    popupСallback.style.visibility = "hidden";
+    popupСallback.removeEventListener('transitionend', switchOffCallbackPopupVisibility);
+}
+
+var setOverlayBody = function() {
+    topDocumentScroll = window.scrollY
+    body.firstElementChild.style.marginTop = -topDocumentScroll + 'px';
+    body.classList.add('overlay');
+}
+
+var removeOverlayBody = function() {
+    body.classList.remove('overlay');
+    body.firstElementChild.style.marginTop = '';
+    window.scroll(0, topDocumentScroll);
+}
+
+var escapePopup = function(e) {
+    if (e.target === popupСallback) {
+        return
+    }
+    hideCallbackPopup();
+    body.removeEventListener('click', escapePopup, true);
+}
+
+var showCallbackPopup = function() {
+    console.log("!!!");
+    popupСallback.style.visibility = "visible";
+    popupСallback.classList.add('shown');
+    setOverlayBody();
+    body.addEventListener('click', escapePopup, true);
+}
+
+var hideCallbackPopup = function() {
+    popupСallback.classList.remove('shown');
+    popupСallback.addEventListener('transitionend', switchOffCallbackPopupVisibility);
+    removeOverlayBody()
+}
+
+var closeInfographicPopup = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var currentInfographicButton = this.parentElement.parentElement;
+    var currentPopup = this.parentElement;
+    currentInfographicButton.style.overflow = '';
+    currentInfographicButton.parentElement.style.zIndex = '';
+    currentPopup.style.display = '';
+    main.style.overflow = '';
+    this.removeEventListener('click', closeInfographicPopup)
+}
+
+var showInfographicPopup = function(e) {
+    e.preventDefault();
+    var currentCloseBtn = this.querySelector('.close-infographic-popup');
+    this.style.overflow = 'visible';
+    this.parentElement.style.zIndex = '2';
+    var currentPopup = this.querySelector('.infographic-mobile-popup');
+    currentPopup.style.display = 'block';
+    main.style.overflow = "visible";
+    this.removeEventListener('click', showCallbackPopup)
+    currentCloseBtn.addEventListener('click', closeInfographicPopup)
+}
+
+backCallers.forEach(function(el, ind, arr) {
+    arr[ind].addEventListener('click', showCallbackPopup)
+})
+
+popupСloseBtn.addEventListener('click', hideCallbackPopup);
+
+if (MOBILE_MODE) {
+    infographicButtons.forEach(function(el, ind, arr) {
+        arr[ind].addEventListener('click', showInfographicPopup)
+    })
+}
 
 
 var infographicAnimate = function() {
@@ -160,25 +241,32 @@ var mainSliderActivate = function(e) {
 
 sliderMainTabs.addEventListener('click', mainSliderActivate );
 
-var fixBody = function() {
-    body.style.height = mobileMenuHeight - 10 + 'px';
-    body.style.overflow = 'hidden'
+var fixBody = function(height) {
+    body.style.height = height - 10 + 'px';
+    body.style.overflow = 'hidden';
 }
 
 var unfixBody = function() {
     body.style.height = '';
-    body.style.overflow = ''
+    body.style.overflow = '';
 }
 
 var showMobileMenu = function(e) {
     e.preventDefault();
+    mobileMenuBlock.style.visibility = "visible";
     mobileMenuBlock.classList.remove('closed');
-    fixBody();
+    fixBody(mobileMenuHeight);
+}
+
+var switchOffMenuVisibility = function() {
+    this.style.visibility = "hidden";
+    mobileMenuBlock.removeEventListener('transitionend', switchOffMenuVisibility)
 }
 
 var hideMobileMenu = function(e) {
     e.preventDefault();
     mobileMenuBlock.classList.add('closed');
+    mobileMenuBlock.addEventListener('transitionend', switchOffMenuVisibility)
     unfixBody();
 }
 

@@ -108,9 +108,29 @@ html *:after {
 
 body {
     margin: 0;
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+body.overlay {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body:before {
+    content: '';
+    display: none;
+    position: absolute;
+    z-index: 6;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+}
+
+body.overlay:before {
+    display: block;
 }
 
 h2 {
@@ -151,6 +171,17 @@ h2 {
     .container {
         max-width: 300px;
     }
+}
+
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
 }
 
 .header {
@@ -805,6 +836,48 @@ h2 {
     }
 }
 
+.infographic-mobile-popup {
+    display: none;
+    position: absolute;
+    top: -40px;
+    left: -90px;
+    width: 300px;
+    padding: 25px 15px;
+    background-color: #fff;
+    box-shadow: 0 0 0 500px rgba(0, 0, 0, 0.6);
+}
+
+.infographic-mobile-popup h4 {
+    text-align: left;
+    font-family: 'Bliss Pro';
+    font-weight: bold;
+    font-size: 18px;
+    color: #ed672a;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.infographic-mobile-popup p {
+    font-family: 'Bliss Pro';
+    font-size: 15px;
+    line-height: 1.45;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.infographic-mobile-popup button {
+    width: 100%;
+    height: 44px;
+    border: none;
+    border-radius: 2px;
+    background-color: #eaeaea;
+    line-height: 44px;
+    text-align: center;
+    font-family: 'Bliss Pro';
+    font-size: 15px;
+    color: #a2a2a2;
+}
+
 @keyframes pulse-sand {
     from {
         box-shadow: 0 0 0 0 rgba(237, 103, 42, 0.8);
@@ -974,7 +1047,7 @@ h2 {
 @media (max-width: 1650px) {
     .well-illustration-wrapper {
         overflow-x: auto;
-        height: 750px;
+        height: 650px;
     }
 }
 
@@ -2142,6 +2215,13 @@ h2 {
     height: 80px;
 }
 
+@media (max-width: 768px) {
+    .about-company .flickity-prev-next-button {
+        width: 44px;
+        height: 44px;
+    }
+}
+
 .about-company .flickity-prev-next-button svg .arrow {
     fill: #fff;
 }
@@ -3044,6 +3124,141 @@ h2 {
     color: #E86702;
 }
 
+.popup-callback {
+    position: fixed;
+    z-index: 8;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0);
+    width: 380px;
+    background-color: #fff;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.popup-callback.shown {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: all 0.4s;
+}
+
+@media (max-width: 768px) {
+    .popup-callback {
+        width: 300px;
+    }
+}
+
+.popup-callback:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    left: 0;
+    bottom: -39px;
+    background-image: url(../images/callback-popup-bottom.png);
+    background-size: 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.popup-callback-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 40px 60px;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .popup-callback-wrapper {
+        padding: 40px;
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    background-color: #eee;
+    background-image: url(../images/close-icon.png);
+    background-repeat: no-repeat;
+    background-position: 20px 50px;
+    cursor: pointer;
+}
+
+.popup-callback h4 {
+    font-family: 'Bliss Pro';
+    font-weight: bold;
+    font-size: 22px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.popup-callback p {
+    font-family: 'Bliss Pro';
+    font-size: 14px;
+    line-height: 1.3;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.popup-callback form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-callback input[type="text"] {
+    width: 100%;
+    height: 44px;
+    background-color: #fbfbfb;
+    border: 1px solid #eaeaea;
+    font-family: 'Bliss Pro';
+    font-size: 14px;
+    color: #333;
+    line-height: 44px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+
+.popup-callback input[type="text"]:last-of-type {
+    margin-bottom: 35px;
+}
+
+.popup-callback input[type="text"]::-webkit-input-placeholder {
+    color: rgba(51, 51, 51, 0.2);
+    transition: opacity 0.3s;
+}
+    
+.popup-callback input[type="text"]:-ms-input-placeholder {
+    color: rgba(51, 51, 51, 0.2);
+    transition: opacity 0.3s;
+}
+    
+.popup-callback input[type="text"]::placeholder {
+    color: rgba(51, 51, 51, 0.2);
+    transition: opacity 0.3s;
+}
+    
+.popup-callback input[type="text"]:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+    
+.popup-callback input[type="text"]:focus:-ms-input-placeholder {
+    opacity: 0;
+}
+    
+.popup-callback input[type="text"]:focus::placeholder {
+    opacity: 0;
+}
 
 @keyframes run-cloud {
     from {
