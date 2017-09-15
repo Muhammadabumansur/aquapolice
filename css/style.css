@@ -637,6 +637,12 @@ h2 {
     position: relative;
     z-index: 1;
     cursor: pointer;
+    transition: all 0.4s;
+}
+
+.order-consultation:hover {
+    filter: brightness(1.1);
+    padding-right: 35px;
 }
 
 @media (max-width: 1650px) {
@@ -1285,6 +1291,10 @@ h2 {
 
 .interactive-block {
     position: relative;
+}
+
+.interactive-block_lifted {
+    top: -30px;
 }
 
 .well-up {

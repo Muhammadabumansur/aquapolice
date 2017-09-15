@@ -133,7 +133,7 @@ var wellInteractiveAnimate = function() {
     var pageHeight = document.documentElement.clientHeight;
     var wellBlockTopOffset = wellBlock.getBoundingClientRect().top;
     var wellBlockBottomOffset = pageHeight - wellBlockTopOffset;
-    if (wellBlockBottomOffset > 650) {
+    if (wellBlockBottomOffset > 750) {
         interactiveBlocs.forEach(wellImageUp)
         window.removeEventListener('scroll', wellInteractiveAnimate)
     }
