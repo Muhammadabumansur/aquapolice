@@ -188,6 +188,7 @@ h2 {
     background-image: url(../images/header-bg.jpg);
     background-size: cover;
     height: 190px;
+    min-height: 190px;
     padding-top: 30px;
     position: relative;
 }
@@ -450,6 +451,12 @@ h2 {
     text-transform: uppercase;
     text-decoration: none;
     border-bottom: 1px solid rgba(0, 113, 187, 0.2);
+    transition: all 0.4s;
+}
+
+.main-menu__list-item a:hover {
+    color: #EF551B;
+    border-bottom-color: rgba(239, 84, 25, 0.20);
 }
 
 @media (max-width: 1650px) {
@@ -521,17 +528,14 @@ h2 {
     padding-bottom: 65px;
 }
 
-@media (max-width: 1650px) {
+@media (max-width: 1300px) {
     .first-section {
         background-image: url(../images/header-bg.jpg);
         background-repeat: no-repeat;
         background-position: top center;
         background-color: #fff;
+        padding-bottom: 0;
     }
-}
-
-@media (max-width: 1300px) {
-    padding-bottom: 0;
 }
 
 .first-section:after {
@@ -563,7 +567,7 @@ h2 {
 }
 
 .left-info {
-    width: 40%;
+    width: 42%;
 }
 
 @media (max-width: 1300px) {
@@ -947,6 +951,7 @@ h2 {
     color: #333;
     font-size: 14px;
     line-height: 1.4;
+    margin: 0;
 }
 
 .infographic-img .main-img {
@@ -1008,12 +1013,13 @@ h2 {
 
 .illustration-text {
     font-family: 'Bliss Pro';
-    width: 60%;
+    width: 70%;
     text-align: left;
     color: #333;
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 35px;
+    margin-top: 0;
 }
 
 @media (max-width: 1650px) {
@@ -1053,8 +1059,8 @@ h2 {
 
 .well-illustration-block {
     opacity: 0;
-    transform-origin: bottom;
-    transition: all 0.6s;
+    margin-top: 150px;
+    transition: margin-top 0.6s, opacity 1.3s;
 }
 
 .well-illustration.animated .well-illustration-block {
@@ -1135,7 +1141,7 @@ h2 {
 .well-illustration-list {
     list-style: none;
     margin: 0;
-    margin-bottom: 220px;
+    margin-bottom: 250px;
     padding: 0;
     display: flex;
     justify-content: space-between;
@@ -1235,15 +1241,15 @@ h2 {
     font-size: 22px;
 }
 
-.illustration-artesian .illustration-artesian-block h4 {
+.illustration-artesian.illustration-artesian-block h4 {
     color: #0071BB;
 }
 
-.illustration-sand .illustration-artesian-block h4 {
+.illustration-sand.illustration-artesian-block h4 {
     color: #f05022;
 }
 
-.illustration-technical .illustration-artesian-block h4 {
+.illustration-technical.illustration-artesian-block h4 {
     color: #797979;
 }
 
@@ -1329,6 +1335,7 @@ h2 {
 }
 
 .arrangement {
+    padding-top: 50px;
     padding-bottom: 70px;
 }
 
@@ -1381,7 +1388,7 @@ h2 {
     color: #0071BB;
     font-size: 35px;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 @media (max-width: 1650px) {
@@ -1908,7 +1915,7 @@ h2 {
 }
 
 .stages-list > li {
-    height: 300px;
+    height: 290px;
     position: relative;
     width: 130px;
 }
@@ -1980,7 +1987,7 @@ h2 {
     margin-bottom: 20px;
     position: absolute;
     top: 200px;
-    width: 260px;
+    width: 200px;
 }
 
 @media (max-width: 1650px) {
@@ -2084,7 +2091,7 @@ h2 {
 }
 
 .about-company-main-text {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 1300px) {
@@ -2199,7 +2206,7 @@ h2 {
     }
 }
 
-.about-company-thumbs a:hover {
+.about-company-thumb.active a {
     border-color: #0071BB;
 }
 

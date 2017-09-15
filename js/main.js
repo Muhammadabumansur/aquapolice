@@ -133,7 +133,7 @@ var wellInteractiveAnimate = function() {
     var pageHeight = document.documentElement.clientHeight;
     var wellBlockTopOffset = wellBlock.getBoundingClientRect().top;
     var wellBlockBottomOffset = pageHeight - wellBlockTopOffset;
-    if (wellBlockBottomOffset > 700) {
+    if (wellBlockBottomOffset > 650) {
         interactiveBlocs.forEach(wellImageUp)
         window.removeEventListener('scroll', wellInteractiveAnimate)
     }
@@ -159,6 +159,18 @@ var pickPhoto = function(e) {
         aboutCompanyMainImage.src = e.target.src
     }
 }
+
+Array.prototype.forEach.call(aboutCompanyThumbs.children, function(el, ind, arr){
+    arr[ind].addEventListener('click', function(e) {
+        Array.prototype.forEach.call(aboutCompanyThumbs.children, function(el, ind, arr){
+            if (e.currentTarget === arr[ind]) {
+                e.currentTarget.classList.add('active')
+            } else {
+                arr[ind].classList.remove('active')
+            }
+        })
+    })
+})
 
 if (DESKTOP_MODE) {
     window.addEventListener('scroll', wellBlockAppear);
