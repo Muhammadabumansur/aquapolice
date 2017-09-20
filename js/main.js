@@ -1,5 +1,6 @@
 var DESKTOP_MODE = window.innerWidth > 1300;
-var MOBILE_MODE = window.innerWidth <= 1300;
+var TAB_MODE = window.innerWidth <= 1300 && window.innerWidth > 768;
+var MOBILE_MODE = window.innerWidth <= 768;
 
 var body = document.querySelector('body');
 var main = document.querySelector('.main');
@@ -50,7 +51,6 @@ var escapePopup = function(e) {
 }
 
 var showCallbackPopup = function() {
-    console.log("!!!");
     popupСallback.style.visibility = "visible";
     popupСallback.classList.add('shown');
     setOverlayBody();
@@ -66,25 +66,29 @@ var hideCallbackPopup = function() {
 var closeInfographicPopup = function(e) {
     e.preventDefault();
     e.stopPropagation();
-    var currentInfographicButton = this.parentElement.parentElement;
-    var currentPopup = this.parentElement;
-    currentInfographicButton.style.overflow = '';
-    currentInfographicButton.parentElement.style.zIndex = '';
-    currentPopup.style.display = '';
+    var currentPopup = document.querySelector('.infographic-mobile-popup.opened')
+    currentPopup.parentElement.style.zIndex = '';
+    currentPopup.classList.remove('opened');
+    removeOverlayBody();
     main.style.overflow = '';
     this.removeEventListener('click', closeInfographicPopup)
+    body.removeEventListener('click', closeInfographicPopup);
 }
 
 var showInfographicPopup = function(e) {
     e.preventDefault();
-    var currentCloseBtn = this.querySelector('.close-infographic-popup');
-    this.style.overflow = 'visible';
-    this.parentElement.style.zIndex = '2';
-    var currentPopup = this.querySelector('.infographic-mobile-popup');
-    currentPopup.style.display = 'block';
+    e.stopPropagation();
+    var currentPopup = document.querySelector('[data-id=' + e.currentTarget.dataset.href + ']');
+    var currentCloseBtn = currentPopup.querySelector('.close-infographic-popup');
+    this.parentElement.style.zIndex = '6';
+    console.log(currentPopup);
+    currentPopup.classList.add('opened');
+    console.log(currentPopup);
+    setOverlayBody();
     main.style.overflow = "visible";
-    this.removeEventListener('click', showCallbackPopup)
-    currentCloseBtn.addEventListener('click', closeInfographicPopup)
+    // this.removeEventListener('click', showInfographicPopup, true)
+    currentCloseBtn.addEventListener('click', closeInfographicPopup);
+    body.addEventListener('click', closeInfographicPopup);
 }
 
 backCallers.forEach(function(el, ind, arr) {
@@ -93,9 +97,9 @@ backCallers.forEach(function(el, ind, arr) {
 
 popupСloseBtn.addEventListener('click', hideCallbackPopup);
 
-if (MOBILE_MODE) {
+if (TAB_MODE) {
     infographicButtons.forEach(function(el, ind, arr) {
-        arr[ind].addEventListener('click', showInfographicPopup)
+        arr[ind].addEventListener('click', showInfographicPopup, true)
     })
 } else {
     infographicButtons.forEach(function(el, ind, arr) {
@@ -203,7 +207,7 @@ if(certificatesSlider) {
 }
 
 var aboutCompanySlider = document.querySelector('.about-company-thumbs');
-if(MOBILE_MODE && aboutCompanySlider) {
+if(TAB_MODE && aboutCompanySlider) {
     var aboutCompanySliderFlkty = new Flickity( aboutCompanySlider, {
       // options
       cellAlign: 'left',
@@ -225,7 +229,7 @@ if(MOBILE_MODE && wellIllustrationSlider) {
       // options
       cellAlign: 'left',
       pageDots: false,
-      groupCells: 1,
+      groupCells: "100%",
       arrowShape: { 
         x0: 15,
         x1: 55, y1: 50,
@@ -289,3 +293,10 @@ var hideMobileMenu = function(e) {
 
 showMobileMenuBtn.addEventListener('click', showMobileMenu);
 hideMobileMenuBtn.addEventListener('click', hideMobileMenu);
+
+$(document).ready(function() {
+	$(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+});

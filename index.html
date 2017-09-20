@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -79,14 +80,14 @@
                                 width="360px" height="100px" viewBox="0 0 360 100">
                                     <path class="path" fill="none" stroke="#ED672A" stroke-width="1" stroke-miterlimit="10" d="M358.56805,33.896917 C311.56526,54.502445 257.36605,60.093591 195.97039,50.670354 C134.574734,41.247117 73.917938,25.356999 14,3"/>
                                 </svg>
-                                <a class="infographic-btn" href="">
+                                <a class="infographic-btn" data-href="sand" href="">
                                     <img src="images/tube-1.png" alt="">
-                                    <div class="infographic-mobile-popup">
-                                        <h4>Песчаная скважина</h4>
-                                        <p>Бурение обходится недорого, однако вода в песчаных слоях может содержать токсины. Перед употреблением ее обязательно нужно обработать. Производительность источника небольшая – около одного кубометра в час. Если скважину использовать нерегулярно, она может забиться.</p>
-                                        <button class="close-infographic-popup">Закрыть</button>
-                                    </div>
                                 </a>
+                                <div class="infographic-mobile-popup" data-id="sand">
+                                    <h4>Песчаная скважина</h4>
+                                    <p>Бурение обходится недорого, однако вода в песчаных слоях может содержать токсины. Перед употреблением ее обязательно нужно обработать. Производительность источника небольшая – около одного кубометра в час. Если скважину использовать нерегулярно, она может забиться.</p>
+                                    <button class="close-infographic-popup">Закрыть</button>
+                                </div>
                             </div>
                             <div class="infographic-text infographic-text_artesian">
                                 <div class="infographic-text-wrapper">
@@ -99,14 +100,14 @@
                                 width="360px" height="100px" viewBox="0 0 360 100">
                                     <path class="path" fill="none" stroke="#0071BB" stroke-width="1" stroke-miterlimit="10" d="M358.56805,33.896917 C311.56526,54.502445 257.36605,60.093591 195.97039,50.670354 C134.574734,41.247117 73.917938,25.356999 14,3"/>
                                 </svg>
-                                <a class="infographic-btn" href="">
+                                <a class="infographic-btn" data-href="artesian" href="">
                                     <img src="images/tube-2.png" alt="">
-                                    <div class="infographic-mobile-popup">
-                                        <h4>Песчаная скважина</h4>
-                                        <p>Бурение обходится недорого, однако вода в песчаных слоях может содержать токсины. Перед употреблением ее обязательно нужно обработать. Производительность источника небольшая – около одного кубометра в час. Если скважину использовать нерегулярно, она может забиться.</p>
-                                        <button class="close-infographic-popup">Закрыть</button>
-                                    </div>
                                 </a>
+                                <div class="infographic-mobile-popup" data-id="artesian">
+                                    <h4>Артезианская скважина</h4>
+                                    <p>Бурение обходится недорого, однако вода в песчаных слоях может содержать токсины. Перед употреблением ее обязательно нужно обработать. Производительность источника небольшая – около одного кубометра в час. Если скважину использовать нерегулярно, она может забиться.</p>
+                                    <button class="close-infographic-popup">Закрыть</button>
+                                </div>
                             </div>
                         </div>
                         <img class="main-img" src="images/infographic.png" alt="">
@@ -340,42 +341,42 @@
                 <div class="certificates-slider-block">
                     <h2>Сертификаты и разрешения на деятельность</h2>
                     <div class="certificates-slider">
-                        <div class="certificates-slide">
+                        <a class="certificates-slide fancybox" rel="gallery1" href="images/sertificate.png">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
-                            <div class="certificates-slide-text"><a href="">Разрешение на бурение в Московской области</a></div>
-                        </div>
-                        <div class="certificates-slide">
+                            <div class="certificates-slide-text"><span>Разрешение на бурение в Московской области</span></div>
+                        </a>
+                        <a class="certificates-slide fancybox" rel="gallery1" href="images/sertificate.png">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
-                            <div class="certificates-slide-text"><a href="">Лучший бурильщик 2017 года</a></div>
-                        </div>
-                        <div class="certificates-slide">
+                            <div class="certificates-slide-text"><span>Лучший бурильщик 2017 года</span></div>
+                        </a>
+                        <a class="certificates-slide fancybox" rel="gallery1" href="images/sertificate.png">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
-                            <div class="certificates-slide-text"><a href="">Сертификат за заслуги перед отечеством</a></div>
-                        </div>
-                        <div class="certificates-slide">
+                            <div class="certificates-slide-text"><span>Сертификат за заслуги перед отечеством</span></div>
+                        </a>
+                        <a class="certificates-slide fancybox" rel="gallery1" href="images/sertificate.png">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
-                            <div class="certificates-slide-text"><a href="">Разрешение на бурение артезианских скважин</a></div>
-                        </div>
-                        <div class="certificates-slide">
+                            <div class="certificates-slide-text"><span>Разрешение на бурение артезианских скважин</span></div>
+                        </a>
+                        <a class="certificates-slide fancybox" rel="gallery1" href="images/sertificate.png">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
-                            <div class="certificates-slide-text"><a href="">Сертификат за заслуги перед отечеством</a></div>
-                        </div>
-                        <div class="certificates-slide">
+                            <div class="certificates-slide-text"><span>Сертификат за заслуги перед отечеством</span></div>
+                        </a>
+                        <a class="certificates-slide fancybox" rel="gallery1" href="images/sertificate.png">
                             <div class="certificates-slide-img-wrap">
                                 <img src="images/sertificate.png" alt="">
                             </div>
-                            <div class="certificates-slide-text"><a href="">Разрешение на бурение артезианских скважин</a></div>
-                        </div>
+                            <div class="certificates-slide-text"><span>Разрешение на бурение артезианских скважин</span></div>
+                        </a>
                     </div>
                 </div>
                 <div class="certificates-passport">
@@ -461,7 +462,7 @@
             </div>
             <div class="copyright">
                 <div class="copyright-text">"Акваполис" - 2017 &copy;</div>
-                <div class="dev-by">Сайт разработан в <a href="http://color-it.ru/">"Color-IT"</a></div>
+                <div class="dev-by">Создание и продвижение сайтов — <a href="http://color-it.ru/" target="_blank">Color-IT</a></div>
             </div>
         </div>
     </footer>
@@ -479,6 +480,8 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js"></script>    
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="js/main.js"></script>
 </body>

@@ -188,7 +188,7 @@ h2 {
     background-image: url(../images/header-bg.jpg);
     background-size: cover;
     height: 190px;
-    min-height: 190px;
+    /* min-height: 190px; */
     padding-top: 30px;
     position: relative;
 }
@@ -482,8 +482,8 @@ h2 {
     color: #fff;
     text-decoration: none;
     margin-bottom: 15px;
+    transition: color 0.4s;
 }
-
 
 .phone {
     font-family: 'Bliss Pro';
@@ -491,6 +491,10 @@ h2 {
     font-size: 22px;
     color: #EF551B;
     text-decoration: none;
+}
+
+.phone:hover {
+    color: #ff5e22;
 }
 
 @media (max-width: 1650px) {
@@ -830,7 +834,7 @@ h2 {
 
 @media (max-width: 1650px) {
     .infographic-btn {
-        left: 735px;
+        left: 745px;
         top: 80px;
     }
 }
@@ -850,11 +854,15 @@ h2 {
     display: none;
     position: absolute;
     top: -40px;
-    left: -90px;
+    left: 650px;
     width: 300px;
     padding: 25px 15px;
     background-color: #fff;
-    box-shadow: 0 0 0 500px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6);
+}
+
+.infographic-mobile-popup.opened {
+    display: block;
 }
 
 .infographic-mobile-popup h4 {
@@ -862,9 +870,16 @@ h2 {
     font-family: 'Bliss Pro';
     font-weight: bold;
     font-size: 18px;
-    color: #ed672a;
     margin-top: 0;
     margin-bottom: 10px;
+}
+
+.infographic-text_sand .infographic-mobile-popup h4 {
+    color: #ed672a;
+}
+
+.infographic-text_artesian .infographic-mobile-popup h4 {
+    color: #1D7EBC;
 }
 
 .infographic-mobile-popup p {
@@ -981,7 +996,7 @@ h2 {
     }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 768px) {
     .infographic-img .main-img {
         margin-top: -70px;
         margin-left: -460px;
@@ -1060,12 +1075,19 @@ h2 {
     .well-illustration-wrapper {
         overflow-x: auto;
         height: 650px;
+        margin-top: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .well-illustration-wrapper {
+        overflow-x: hidden;
     }
 }
 
 .well-illustration-block {
     opacity: 0;
-    margin-top: 150px;
+    
     transition: margin-top 0.6s, opacity 1.3s;
 }
 
@@ -1154,7 +1176,7 @@ h2 {
     height: 100%;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1650px) {
     .well-illustration-list {
         margin-bottom: 0;
     }
@@ -1163,7 +1185,7 @@ h2 {
 @media (max-width: 1300px) {
     .well-illustration-list .flickity-viewport {
         width: 100%;
-        overflow-x: visible;
+        overflow-x: auto;
     }
     .well-illustration-list .flickity-viewport:before {
         content: '';
@@ -1177,7 +1199,13 @@ h2 {
         background-image: linear-gradient(to right, rgba(255,255,255,0.9) 10%, transparent 10%, transparent, transparent 90%, rgba(255,255,255,0.9) 90%);
     }
     .well-illustration-list .flickity-slider {
-        margin-left: 40px;
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .well-illustration-list .flickity-viewport {
+        overflow-x: hidden;
     }
 }
 
@@ -1224,6 +1252,13 @@ h2 {
     .illustration-artesian-block.illustration-artesian-block {
         margin-right: 20px;
         height: 600px;
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .illustration-artesian-block.illustration-artesian-block {
+        min-width: auto;
     }
 }
 
@@ -1673,15 +1708,21 @@ h2 {
     filter: drop-shadow(5px 5px 5px #eee);
 }
 
+@media (max-width: 1650px) {
+    .tube-left {
+        width: 186px;
+    }
+}
+
 @media (max-width: 1300px) {
     .tube-left {
-        width: 90px;
+        width: 210px;
     }
 }
 
 @media (max-width: 768px) {
     .tube-left {
-        width: 120px;
+        width: 300px;
     }
 }
 
@@ -2397,7 +2438,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 50px
+    margin-right: 50px;
+    text-decoration: none;
 }
 
 @media (max-width: 1300px) {
@@ -2431,7 +2473,7 @@ h2 {
     text-align: center;
 }
 
-.certificates-slide-text a {
+.certificates-slide-text span {
     font-family: 'Bliss Pro';
     font-weight: 500;
     font-size: 18px;
@@ -2442,12 +2484,12 @@ h2 {
 }
 
 @media (max-width: 1650px) {
-    .certificates-slide-text a {
+    .certificates-slide-text span {
         font-size: 15px;
     }
 }
 
-.certificates-slide:hover .certificates-slide-text a {
+.certificates-slide:hover .certificates-slide-text span {
     color: #0071BB;
     border-bottom: 1px solid rgba(0, 113, 187, 0.2);
 }
